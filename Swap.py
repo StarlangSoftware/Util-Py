@@ -1,4 +1,4 @@
-class Swap:
+class Swap(object):
 
     """ The swap method takes a list and two integer numbers i, j. And interchange the given array's
     items at index i and index j.
@@ -12,7 +12,9 @@ class Swap:
     j : int
         second index to change.
     """
-    def swap(self, array, i, j):
+
+    @staticmethod
+    def swap(array, i, j):
         t = array[i]
         array[i] = array[j]
         array[j] = t

@@ -1,4 +1,4 @@
-class Interval:
+class Interval(object):
     # A constructor of Interval class which creates a new list.
     def __init__(self):
         self.list = []
