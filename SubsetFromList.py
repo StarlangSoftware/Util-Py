@@ -17,7 +17,7 @@ class SubsetFromList(Subset):
     elementCount : int
         input element count.
     """
-    def __init__(self, list, elementCount):
+    def __init__(self, list: list, elementCount: int):
         self.elementList = list
         self.elementCount = elementCount
         self.set = []
@@ -36,7 +36,7 @@ class SubsetFromList(Subset):
     boolean
         true if next subset generation from list is possible, false otherwise.
     """
-    def next(self):
+    def next(self) -> bool:
         for i in range(self.elementCount - 1, -1, -1):
             self.indexList[i] = self.indexList[i] + 1
             if self.indexList[i] < len(self.elementList) - self.elementCount + i + 1:

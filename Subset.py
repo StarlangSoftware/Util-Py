@@ -15,7 +15,7 @@ class Subset(object):
     elementCount : int
         input element count.
     """
-    def __init__(self, rangeStart, rangeEnd, elementCount):
+    def __init__(self, rangeStart: int, rangeEnd: int, elementCount: int):
         self.rangeEnd = rangeEnd
         self.elementCount = elementCount
         self.set = []
@@ -31,7 +31,7 @@ class Subset(object):
     list
         the set list
     """
-    def get(self):
+    def get(self) -> list:
         return self.set
 
     """
@@ -49,7 +49,7 @@ class Subset(object):
     list
         list of size of elementCount + 2.
     """
-    def getX(self, M):
+    def getX(self, M: int) -> list:
         X = []
         X.append(0)
         for i in range(self.elementCount):
@@ -65,7 +65,7 @@ class Subset(object):
     list
         the multiset list.
     """
-    def getmultiset(self):
+    def getmultiset(self) -> list:
         return self.multiset
 
     """
@@ -80,7 +80,7 @@ class Subset(object):
     M
         integer input.
     """
-    def multiset(self, M):
+    def multiset(self, M: int):
         for i in range(self.elementCount):
             self.multiset.append(self.set[i])
             self.multiset.append(M - self.set[i])
@@ -98,7 +98,7 @@ class Subset(object):
     boolean
         true if next subset generation is possible, false otherwise.
     """
-    def next(self):
+    def next(self) -> bool:
         for i in range(self.elementCount - 1, -1, -1):
             self.set[i] = self.set[i] + 1
             if self.set[i] <= self.rangeEnd - self.elementCount + i + 1:

@@ -13,7 +13,7 @@ class RandomNormalizedArray(object):
     itemCount : int
         input defining array size.
      """
-    def __init__(self, itemCount):
+    def __init__(self, itemCount: int):
         sum = 0.0
         self.array = []
         for i in range(itemCount):
@@ -30,5 +30,5 @@ class RandomNormalizedArray(object):
     list
         the double list.
      """
-    def get(self):
+    def get(self) -> list:
         return self.array

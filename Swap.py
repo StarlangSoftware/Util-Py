@@ -14,7 +14,7 @@ class Swap(object):
     """
 
     @staticmethod
-    def swap(array, i, j):
+    def swap(array: list, i: int, j: int):
         t = array[i]
         array[i] = array[j]
         array[j] = t

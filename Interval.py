@@ -12,7 +12,7 @@ class Interval(object):
     end : int   
         second element of Tuple.
     """
-    def add(self, start, end):
+    def add(self, start: int, end: int):
         self.list.append((start, end))
 
     """ The getFirst method returns the first element at the list list's given index.
@@ -27,7 +27,7 @@ class Interval(object):
     item
         the first element at the list list's given index.
     """
-    def getFirst(self, index):
+    def getFirst(self, index: int) -> int:
         return self.list[index][0]
 
     """ The getLast method returns the last element at the list list's given index.
@@ -42,7 +42,7 @@ class Interval(object):
     item
         the last element at the list list's given index.
     """
-    def getLast(self, index):
+    def getLast(self, index: int) -> int:
         return self.list[index][1]
 
     """ The size method returns the size of the list list.
@@ -51,5 +51,5 @@ class Interval(object):
     int
         size of the list list.
     """
-    def size(self):
+    def size(self) -> int:
         return len(self.list)

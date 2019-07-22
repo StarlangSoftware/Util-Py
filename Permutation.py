@@ -12,7 +12,7 @@ class Permutation(object):
      n: int
         integer input.
      """
-    def __init__(self, n):
+    def __init__(self, n: int):
         self.n = n
         self.a = []
         for i in range(n):
@@ -26,7 +26,7 @@ class Permutation(object):
     list 
         a
     """
-    def get(self):
+    def get(self) -> list:
         return self.a
 
     """
@@ -37,7 +37,7 @@ class Permutation(object):
     boolean
         true if next permutation is possible, false otherwise.
      """
-    def next(self):
+    def next(self) -> bool:
         i = self.n - 2
         while i >= 0 and self.a[i] >= self.a[i + 1]:
             i = i - 1
