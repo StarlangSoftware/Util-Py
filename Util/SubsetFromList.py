@@ -1,4 +1,4 @@
-import Subset
+from Util import Subset
 
 
 class SubsetFromList(Subset):

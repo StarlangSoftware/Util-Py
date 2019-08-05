@@ -1,4 +1,4 @@
-from Swap import Swap
+from Util.Swap import Swap
 
 
 class Permutation(object):
