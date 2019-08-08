@@ -4,7 +4,7 @@ setup(
     name='NlpToolkit-Util',
     version='1.0.0',
     packages=['Util'],
-    url='',
+    url='https://github.com/olcaytaner/Util-Py',
     license='',
     author='olcaytaner',
     author_email='olcaytaner@isikun.edu.tr',
