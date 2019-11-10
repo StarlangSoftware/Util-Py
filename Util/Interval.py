@@ -1,7 +1,10 @@
 class Interval(object):
+
+    __list: list
+
     # A constructor of Interval class which creates a new list.
     def __init__(self):
-        self.list = []
+        self.__list = []
 
     """ The add method adds a new Tuple with given inputs to the list.
     
@@ -13,7 +16,7 @@ class Interval(object):
         second element of Tuple.
     """
     def add(self, start: int, end: int):
-        self.list.append((start, end))
+        self.__list.append((start, end))
 
     """ The getFirst method returns the first element at the list list's given index.
     
@@ -28,7 +31,7 @@ class Interval(object):
         the first element at the list list's given index.
     """
     def getFirst(self, index: int) -> int:
-        return self.list[index][0]
+        return self.__list[index][0]
 
     """ The getLast method returns the last element at the list list's given index.
 
@@ -43,7 +46,7 @@ class Interval(object):
         the last element at the list list's given index.
     """
     def getLast(self, index: int) -> int:
-        return self.list[index][1]
+        return self.__list[index][1]
 
     """ The size method returns the size of the list list.
     Returns
@@ -52,4 +55,4 @@ class Interval(object):
         size of the list list.
     """
     def size(self) -> int:
-        return len(self.list)
+        return len(self.__list)

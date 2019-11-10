@@ -1,5 +1,10 @@
 class Subset(object):
 
+    set: list
+    multiset: list
+    __rangeEnd: int
+    elementCount: int
+
     """
     The constructor of Subset class which takes 3 integer inputs; rangeStart, rangeEnd, and elementCount.
     It initializes variables rangeEnd and elementCount with given inputs, creates 2 arrays; set and multiset with the
@@ -16,7 +21,7 @@ class Subset(object):
         input element count.
     """
     def __init__(self, rangeStart: int, rangeEnd: int, elementCount: int):
-        self.rangeEnd = rangeEnd
+        self.__rangeEnd = rangeEnd
         self.elementCount = elementCount
         self.set = []
         self.multiset = []
@@ -101,7 +106,7 @@ class Subset(object):
     def next(self) -> bool:
         for i in range(self.elementCount - 1, -1, -1):
             self.set[i] = self.set[i] + 1
-            if self.set[i] <= self.rangeEnd - self.elementCount + i + 1:
+            if self.set[i] <= self.__rangeEnd - self.elementCount + i + 1:
                 break
         else:
             return False

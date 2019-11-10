@@ -3,6 +3,8 @@ import random
 
 class RandomNormalizedArray(object):
 
+    __array: list
+
     """
     The constructor of RandomNormalizedArray class gets an integer itemCount as an input. Creates a list of
     size itemCount and loops through each element of the list and initializes them with a random number by using random.
@@ -15,12 +17,12 @@ class RandomNormalizedArray(object):
      """
     def __init__(self, itemCount: int):
         sum = 0.0
-        self.array = []
+        self.__array = []
         for i in range(itemCount):
-            self.array.append(random.uniform(0, 1))
-            sum += self.array[i]
+            self.__array.append(random.uniform(0, 1))
+            sum += self.__array[i]
         for i in range(itemCount):
-            self.array[i] /= sum
+            self.__array[i] /= sum
 
     """
     Getter for the double list.
@@ -31,4 +33,4 @@ class RandomNormalizedArray(object):
         the double list.
      """
     def get(self) -> list:
-        return self.array
+        return self.__array

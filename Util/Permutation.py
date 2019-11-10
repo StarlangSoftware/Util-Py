@@ -2,6 +2,9 @@ from Util.Swap import Swap
 
 
 class Permutation(object):
+
+    __a: list
+    __n: int
     
     """
     A constructor of Permutation class which creates a new list and assigns integer
@@ -13,10 +16,10 @@ class Permutation(object):
         integer input.
      """
     def __init__(self, n: int):
-        self.n = n
-        self.a = []
+        self.__n = n
+        self.__a = []
         for i in range(n):
-            self.a.append(i)
+            self.__a.append(i)
 
     """
     The get method returns the list a.
@@ -27,7 +30,7 @@ class Permutation(object):
         a
     """
     def get(self) -> list:
-        return self.a
+        return self.__a
 
     """
      The next method generates next permutation for the list a.
@@ -38,19 +41,19 @@ class Permutation(object):
         true if next permutation is possible, false otherwise.
      """
     def next(self) -> bool:
-        i = self.n - 2
-        while i >= 0 and self.a[i] >= self.a[i + 1]:
+        i = self.__n - 2
+        while i >= 0 and self.__a[i] >= self.__a[i + 1]:
             i = i - 1
         if i == -1:
             return False
-        j = self.n - 1
-        while self.a[i] >= self.a[j]:
+        j = self.__n - 1
+        while self.__a[i] >= self.__a[j]:
             j = j - 1
-        Swap.swap(self.a, i, j)
+        Swap.swap(self.__a, i, j)
         k = i + 1
-        j = self.n - 1
+        j = self.__n - 1
         while k < j:
-            Swap.swap(self.a, j, k)
+            Swap.swap(self.__a, j, k)
             k = k + 1
             j = j - 1
         return True
