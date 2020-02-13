@@ -6,41 +6,41 @@ class Permutation(object):
     __a: list
     __n: int
     
-    """
-    A constructor of Permutation class which creates a new list and assigns integer
-    numbers starting from 0 to given input n.
-
-    Parameters
-    ----------
-     n: int
-        integer input.
-     """
     def __init__(self, n: int):
+        """
+        A constructor of Permutation class which creates a new list and assigns integer
+        numbers starting from 0 to given input n.
+
+        Parameters
+        ----------
+         n: int
+            integer input.
+         """
         self.__n = n
         self.__a = []
         for i in range(n):
             self.__a.append(i)
 
-    """
-    The get method returns the list a.
-
-    Returns
-    ----------
-    list 
-        a
-    """
     def get(self) -> list:
+        """
+        The get method returns the list a.
+
+        Returns
+        ----------
+        list
+            a
+        """
         return self.__a
 
-    """
-     The next method generates next permutation for the list a.
-
-    Returns
-    ----------
-    boolean
-        true if next permutation is possible, false otherwise.
-     """
     def next(self) -> bool:
+        """
+         The next method generates next permutation for the list a.
+
+        Returns
+        ----------
+        boolean
+            true if next permutation is possible, false otherwise.
+        """
         i = self.__n - 2
         while i >= 0 and self.__a[i] >= self.__a[i + 1]:
             i = i - 1
