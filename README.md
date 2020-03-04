@@ -55,4 +55,4 @@ Steps for opening the cloned project:
 
 **From IDE**
 
-After being done with the downloading and Maven indexing, select **Build Project** option from **Build** menu. After compilation process, user can run DataStructure.
+After being done with the downloading and Maven indexing, select **Build Project** option from **Build** menu. After compilation process, user can run Util-Py.
