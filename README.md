@@ -49,114 +49,91 @@ Steps for opening the cloned project:
 
 After being done with the downloading and Maven indexing, select **Build Project** option from **Build** menu. After compilation process, user can run Util-Py.
 
-### Examples
++ [Interval](#interval)
++ [Subset](#subset)
++ [SubsetFromList](#subsetfromlist)
++ [Permutation](#permutation)
 
+## Interval 
 
- * Interval
- 
- 	Creating an Interval and adding tuples with given integers First and Last respectively.
- 	 
-        interval = Interval()
-        interval.add(0, 4)
-        interval.add(1, 6)
-	  
-	Interval[0]'s first element calling .getFirst() function.
-	
-        print("First element on index 0 :" + repr(interval.getFirst(0)))
-	
-	Interval[1]'s last element calling .getLast() function.
-	
-        print("Last element of index 1 :" + repr(interval.getLast(1)))
-	
-	Size of interval_list calling .size() function.
-	
-        print("Size of Interval List :" + repr(interval.size()))
-	   
-	Output
-	  
-	   First element on index 0 :0
-           Last element of index 1 :6
-           Size of Interval List :2
-	   
- * RandomNormalizedArray
- 	
-	Gets an integer itemCount as an input. Creates an array of size itemCount and loops through each element of the array         and initializes them with a random number, at the end each array element divided to sum.
-	
-	Creates a double array as a size of 3 and divide each element to sum.Using .get() method you can print the array elements.
-	 
-	   randomNormalizedArray = RandomNormalizedArray(4)
-	   print("Generated List: "+repr(randomNormalizedArray.get()))
-	   
-	Output 
-	
-	   [0.2487524169259855, 0.30247636299454594, 0.22774359412166229, 0.22102762595780637]
-	   
-     
- * Permutation
- 
- 	Creates an integer array 0 to given input.By using .get() method we can get the generated array.
-	
-	    permutation = Permutation(3)
-   	    print("Created List :" + repr(permutation.get()))
-	   
-	Output
-	   
-	   Created List :[0, 1, 2]
+Aralık veri yapısını tutmak için Interval sınıfı
 
-	 All permutations of array.
-	   
-	   print("All Permitations:")
-	   while permutation.next() is not False:
-            permutation.next()
-            print(permutation.get())
-	   
-	 Output
+	a = Interval();
 
-	   All Permitations:
-	   [1, 0, 2]
-	   [2, 0, 1]	
-	   [2, 1, 0]
-	   
-	   
- 
-  * SubsetFromList
-         
-	 Creates subsets from given integer array with given subset's element count.
-	    
-	    _list = [5, 3, 2, 9]
-            subSetFromList = SubsetFromList(_list, 2)
-	    SubsetFromList subsetFromList = new SubsetFromList(arrayList,3);
-	 
-	 Using .next() will create new subsets.
-	  
-	    print("Subsets of " + repr(_list) + " are:")
-           while subSetFromList.next() is not False:
-            subSetFromList.next()
-            print(subSetFromList.get())
-   	 
-	 Output
-	 
-	    Subsets of [5, 3, 2, 9] are:
-		[5, 9]
-		[3, 9]
-		
- * Swap
- 
- 	Swap takes a list and two integer numbers i, j. And interchange the given array's
-        items at index i and index j.
-	
-	   swap = Swap()
-           _array = [1, 2, 3, 4, 5]
-            print("List: " + repr(_array))   
-	 
-          swap.swap(_array,0,1)
-          print("Swapped List: "+repr(_array))
-	  
-	  _array[0] and _array[1] swapped.
-	  
-	  Output
-	  
-	   List: [1, 2, 3, 4, 5]
-	   Swapped List: [2, 1, 3, 4, 5]
-	   
-	   
+1 ve 4 aralığı eklemek için
+
+	a.add(1, 4);
+
+i. aralığın başını getirmek için (yukarıdaki örnekteki 1 gibi)
+
+	int getFirst(int index)
+
+i. aralığın sonunu getirmek için (yukarıdaki örnekteki 4 gibi)
+
+	int getLast(int index)
+
+## Subset 
+
+Altküme tanımlamak ve tüm altkümelere ulaşmak için Subset ve SubsetFromList sınıfları
+
+Subset veri yapısını tanımlamak için
+
+	Subset(int rangeStart, int rangeEnd, int elementCount)
+
+Burada elemenCount elemanlı, elemanları rangeStart ile rangeEnd arasında değerler alabilen
+tüm altkümeleri gezen bir yapıdan bahsediyoruz. Örneğin
+
+Subset(1, 4, 2), bize iki elemanlı elemanlarını 1 ile 4 arasından gelen tüm alt kümeleri 
+seçmek için kullanılan bir constructor'dır. Tüm altkümeleri elde etmek için
+
+	a = Subset(1, 4, 2);
+	do{
+		subset = a.get();
+		....
+	}while(a.next());
+
+Burada subset sırasıyla {1, 2}, {1, 3}, {1, 4}, {2, 3}, {2, 4}, {3, 4} altkümelerini gezer. 
+
+## SubsetFromList 
+
+Altküme tanımlamak ve tüm altkümelere ulaşmak için Subset ve SubsetFromList sınıfları
+
+SubsetFromList veri yapısını kullanmak için
+
+	SubsetFromList(int[] list, int elementCount)
+
+Burada elementCount elemanlı, elemanları list listesinden çekilen değerler olan ve tüm 
+altkümeleri gezen bir yapıdan bahsediyoruz. Örneğin
+
+SubsetFromList({1, 2, 3, 4}, 3), bize üç elemanlı elemanlarını {1, 2, 3, 4} listesinden 
+seçen ve tüm alt kümeleri gezmekte kullanılan bir constructor'dır. Tüm altkümeleri elde 
+etmek için
+
+	a = SubsetFromList({1, 2, 3, 4}, 3);
+	do{
+		subset = a.get();
+		....
+	}while(a.next());
+
+Burada SubsetFromList sırasıyla {1, 2, 3}, {1, 2, 4}, {1, 3, 4}, {2, 3, 4} altkümelerini 
+gezer. 
+
+## Permutation
+
+Permütasyon tanımlamak ve tüm permütasyonlara ulaşmak için Permutation sınıfı
+
+	Permutation(n)
+
+Burada 0 ile n - 1 arasındaki değerlerin tüm olası n'li permütasyonlarını gezen bir 
+yapıdan bahsediyoruz. Örneğin
+
+Permutation(5), bize değerleri 0 ile 4 arasında olan tüm 5'li permütasyonları gezmekte 
+kullanılan bir constructor'dır. Tüm permütasyonları elde etmek için
+
+	a = Permutation(5)
+	do{
+		permutation = a.get();
+		...
+	}while(a.next());
+
+Burada Permutation sırasıyla {0, 1, 2, 3, 4}, {0, 1, 2, 4, 3} gibi permütasyonları gezer.
