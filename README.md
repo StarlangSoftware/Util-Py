@@ -49,8 +49,8 @@ Steps for opening the cloned project:
 
 After being done with the downloading and Maven indexing, select **Build Project** option from **Build** menu. After compilation process, user can run Util-Py.
 
-# Detailed Description
-
+Detailed Description
+============
 + [Interval](#interval)
 + [Subset](#subset)
 + [SubsetFromList](#subsetfromlist)
