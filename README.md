@@ -2,8 +2,8 @@
 
 For Developers
 ============
-You can also see either [Java](https://github.com/olcaytaner/Util) 
-or [C++](https://github.com/olcaytaner/Util-CPP) repository.
+You can also see [Java](https://github.com/starlangsoftware/Util), [C++](https://github.com/starlangsoftware/Util-CPP), or [C#](https://github.com/starlangsoftware/Util-CS) repository.
+
 ## Requirements
 
 * [Python 3.7 or higher](#python)
