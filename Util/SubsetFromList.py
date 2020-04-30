@@ -25,7 +25,6 @@ class SubsetFromList(Subset):
         self.elementCount = elementCount
         self.set = []
         self.__indexList = []
-        self.multiset = []
         for i in range(elementCount):
             self.__indexList.append(i)
             self.set.append(self.__elementList[self.__indexList[i]])

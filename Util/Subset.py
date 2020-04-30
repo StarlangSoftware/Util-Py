@@ -1,7 +1,6 @@
 class Subset(object):
 
     set: list
-    multiset: list
     __rangeEnd: int
     elementCount: int
 
@@ -24,7 +23,6 @@ class Subset(object):
         self.__rangeEnd = rangeEnd
         self.elementCount = elementCount
         self.set = []
-        self.multiset = []
         for i in range(elementCount):
             self.set.append(rangeStart + i)
 
@@ -38,61 +36,6 @@ class Subset(object):
             the set list
         """
         return self.set
-
-    def getX(self, M: int) -> list:
-        """
-        The getX method takes an integer M as an input. Creates a new list X size of elementCount+2 and assigns 0 to its
-        first element. Starting from the second index, it assigns set lists elements to newly
-        created list X. Then, assigns M to the last element of X.
-
-        Parameters
-        ----------
-        M
-            integer input.
-
-        Returns
-        ----------
-        list
-            list of size of elementCount + 2.
-        """
-        X = [0]
-        for i in range(self.elementCount):
-            X.append(self.set[i])
-        X.append(M)
-        return X
-
-    def getmultiset(self) -> list:
-        """
-        Getter for the multiset list.
-
-        Returns
-        ----------
-        list
-            the multiset list.
-        """
-        return self.multiset
-
-    def multiset(self, M: int):
-        """
-        The multiset method takes an integer M as an input. Assigns ith element of set list to even numbered
-        indices of multiset list and M - ith element of set list to odd numbered
-        indices of multiset list, and i is between 0 and elementCount. Then, assigns M to jth index of multiset
-        list. At the end, fill up the rest of the multiset list via different
-        indices of set list and sort the multiset list.
-
-        Parameters
-        ----------
-        M
-            integer input.
-        """
-        for i in range(self.elementCount):
-            self.multiset.append(self.set[i])
-            self.multiset.append(M - self.set[i])
-        self.multiset.append(M)
-        for i in range(self.elementCount - 1, 0, -1):
-            for k in range(i - 1, -1, -1):
-                self.multiset.append(self.set[i] - self.set[k])
-        self.multiset.sort()
 
     def next(self) -> bool:
         """
