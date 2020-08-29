@@ -331,3 +331,13 @@ NlpToolkit_Util.egg-info/dependency_links.txt
 NlpToolkit_Util.egg-info/PKG-INFO
 NlpToolkit_Util.egg-info/SOURCES.txt
 NlpToolkit_Util.egg-info/top_level.txt
+.idea/misc.xml
+.idea/modules.xml
+.idea/Util.iml
+.idea/vcs.xml
+.idea/inspectionProfiles/Project_Default.xml
+dist/NlpToolkit-Util-1.0.1.tar.gz
+dist/NlpToolkit-Util-1.0.2.tar.gz
+dist/NlpToolkit-Util-1.0.3.tar.gz
+dist/NlpToolkit-Util-1.0.4.tar.gz
+dist/NlpToolkit-Util-1.0.5.tar.gz
