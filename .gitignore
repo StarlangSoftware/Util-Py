@@ -341,3 +341,5 @@ dist/NlpToolkit-Util-1.0.2.tar.gz
 dist/NlpToolkit-Util-1.0.3.tar.gz
 dist/NlpToolkit-Util-1.0.4.tar.gz
 dist/NlpToolkit-Util-1.0.5.tar.gz
+Util/__pycache__/__init__.cpython-37.pyc
+Util/__pycache__/Subset.cpython-37.pyc
