@@ -6,7 +6,7 @@ long_description = (this_directory / "README.md").read_text(encoding="utf-8")
 
 setup(
     name='NlpToolkit-Util',
-    version='1.0.7',
+    version='1.0.8',
     packages=['Util'],
     url='https://github.com/StarlangSoftware/Util-Py',
     license='',
