@@ -57,3 +57,6 @@ class Permutation(object):
             k = k + 1
             j = j - 1
         return True
+
+    def __repr__(self):
+        return f"{self.__a}"

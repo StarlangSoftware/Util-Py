@@ -1,10 +1,10 @@
 class Subset(object):
 
     set: list
-    __rangeEnd: int
-    elementCount: int
+    __range_end: int
+    element_count: int
 
-    def __init__(self, rangeStart: int, rangeEnd: int, elementCount: int):
+    def __init__(self, range_start: int, range_end: int, element_count: int):
         """
         The constructor of Subset class which takes 3 integer inputs; rangeStart, rangeEnd, and elementCount.
         It initializes variables rangeEnd and elementCount with given inputs, creates 2 arrays; set and multiset with
@@ -13,18 +13,18 @@ class Subset(object):
 
         Parameters
         ----------
-        rangeStart : int
+        range_start : int
             input defining start range.
-        rangeEnd : int
+        range_end : int
             input defining ending range.
-        elementCount : int
+        element_count : int
             input element count.
         """
-        self.__rangeEnd = rangeEnd
-        self.elementCount = elementCount
+        self.__range_end = range_end
+        self.element_count = element_count
         self.set = []
-        for i in range(elementCount):
-            self.set.append(rangeStart + i)
+        for i in range(element_count):
+            self.set.append(range_start + i)
 
     def get(self) -> list:
         """
@@ -46,20 +46,15 @@ class Subset(object):
         boolean
             true if next subset generation is possible, false otherwise.
         """
-        for i in range(self.elementCount - 1, -1, -1):
+        for i in range(self.element_count - 1, -1, -1):
             self.set[i] = self.set[i] + 1
-            if self.set[i] <= self.__rangeEnd - self.elementCount + i + 1:
+            if self.set[i] <= self.__range_end - self.element_count + i + 1:
                 break
         else:
             return False
-        for j in range(i + 1, self.elementCount):
+        for j in range(i + 1, self.element_count):
             self.set[j] = self.set[j - 1] + 1
         return True
 
-    def print(self):
-        """
-        The print method prints elements of set list.
-        """
-        for i in range(self.elementCount):
-            print(self.set[i], end=" ")
-        print()
+    def __repr__(self):
+        return f"{self.set}"

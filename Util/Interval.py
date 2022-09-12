@@ -56,3 +56,6 @@ class Interval(object):
             size of the list list.
         """
         return len(self.__list)
+
+    def __repr__(self):
+        return f"{self.__list}"
