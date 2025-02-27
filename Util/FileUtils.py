@@ -3,7 +3,7 @@ class FileUtils(object):
     @staticmethod
     def readHashMap(fileName: str) -> dict:
         result = dict()
-        file = open(fileName, "r")
+        file = open(fileName, "r", encoding="utf-8")
         lines = file.readlines()
         file.close()
         for line in lines:
