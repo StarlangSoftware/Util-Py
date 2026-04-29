@@ -5,8 +5,8 @@ this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text(encoding="utf-8")
 
 setup(
-    name='NlpToolkit-Util',
-    version='1.0.12',
+    name='nlptoolkit_util',
+    version='1.0.13',
     packages=['Util'],
     url='https://github.com/StarlangSoftware/Util-Py',
     license='',
